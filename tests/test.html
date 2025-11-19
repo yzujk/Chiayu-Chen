@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投票問卷系統 - 測試</title>
+    <!-- Mocha CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha@10/mocha.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #mocha {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <!-- Mocha Framework -->
+    <script src="https://cdn.jsdelivr.net/npm/mocha@10/mocha.js"></script>
+    <!-- Chai Assertion Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chai@4/chai.js"></script>
+    <!-- GUN.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gun@0.2023.10/gun.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun@0.2023.10/sea.js"></script>
+
+    <!-- Initialize Mocha -->
+    <script>
+        mocha.setup('bdd');
+        const expect = chai.expect;
+    </script>
+
+    <!-- Project Modules (must load before tests) -->
+    <script src="../src/gun-client.js"></script>
+    <script src="../src/poll-manager.js"></script>
+
+    <!-- Test Cases -->
+    <script src="test.js"></script>
+
+    <!-- Run Mocha -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
